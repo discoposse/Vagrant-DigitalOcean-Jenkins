@@ -1,14 +1,15 @@
 Vagrant.configure('2') do |config|
-	config.vm.define "minecraft" do |minecraft|
-  		config.vm.provider :digital_ocean do |provider, override|
-    			override.ssh.private_key_path = 'id_rsa'
-    			override.vm.box = 'digital_ocean'
-    			provider.hostname = 'minecraft'
-    			provider.size = '1GB'
-    			provider.client_id = 'YOURCLIENTKEY'
-    			provider.image = 'Ubuntu 12.04.4 x64'
-    			provider.api_key = 'YOURAPIKEY'
-  		end
-	config.vm.provision :shell, :path => "minecraft-installer.sh"
-	end
+
+config.vm.define "jenkins" do |jenkins|
+  config.vm.provider :digital_ocean do |provider, override|
+    override.ssh.private_key_path = 'id_rsa'
+    override.vm.box = 'digital_ocean'
+    provider.hostname = 'jenkins'
+    provider.size = '1GB'
+    provider.client_id = 'YOURCLIENTKEY'
+    provider.image = 'Ubuntu 14.04 x64'
+    provider.api_key = 'YOURAPIKEY'
+  end
+config.vm.provision :shell, :path => "jenkins-installer.sh"
+end
 end
