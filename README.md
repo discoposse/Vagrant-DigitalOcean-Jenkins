@@ -8,4 +8,4 @@ Requirements include:
 - Your Client ID for Digital Ocean 
 - Your API Key for Digital Ocean
 
-This will build a server named 'jenkins' on an Ubuntu 14.04 server and deploy the Jenkins components using Juju.
+This will build a server named 'jenkins' on an Ubuntu 14.04 server and deploy the Jenkins components.
